@@ -5,10 +5,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from pages.login_page import LoginPage
 from locators.locators import LoginPageLocators
+
 URL = "https://www.saucedemo.com/"
 user_name = 'standard_user'
 password = 'secret_sauce'
-
 
 @pytest.fixture(scope='function')
 def chrome():
@@ -18,7 +18,6 @@ def chrome():
     driver.get(URL)
     yield driver
     driver.close()
-
 
 @pytest.fixture(scope='function')
 def login_to_shop(chrome):

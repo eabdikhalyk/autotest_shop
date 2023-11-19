@@ -21,7 +21,6 @@ def test_with_valid_data(chrome):
     title = page.get_title(ProductsPageLocators.title)
     assert title == title_in_page
 
-
 def test_with_invalid_data(chrome):
     page = LoginPage(chrome)
     page.enter_text(LoginPageLocators.field_user_name, invalid_user_name)
