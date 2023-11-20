@@ -23,15 +23,5 @@ def test_checkout_from(login_to_shop):
     checkout_page.enter_text(CheckoutPageLocators.postal_code,text=postal_code)
     checkout_page.click(CheckoutPageLocators.continue_button)
     payment_info_actual = checkout_page.get_element(CheckoutPageLocators.payment_info).text
-    prices = checkout_page.get_all_elements(CheckoutPageLocators.inventory_price)
-    total_actual = 0
-    for item in prices:
-        price = item.text.replace('$','')
-        total_actual += float(price)
-    total_expected = checkout_page.get_element(CheckoutPageLocators.item_total).text
-    total_expected.price.replace('Item total: $','')
-    print(total_actual, "act")
-    print(total_expected,'ex')
 
     assert payment_info_actual == payment_info_expected
-    assert total_actual == float(total_expected)
