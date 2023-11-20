@@ -17,7 +17,7 @@ def chrome():
     driver = webdriver.Chrome(options=chrome_options,service=ChromeService(ChromeDriverManager().install()))
     driver.get(URL)
     yield driver
-    driver.close()
+    driver.quit()
 
 @pytest.fixture(scope='function')
 def login_to_shop(chrome):
@@ -25,5 +25,5 @@ def login_to_shop(chrome):
     page = LoginPage(driver)
     page.enter_text(LoginPageLocators.field_user_name, user_name)
     page.enter_text(LoginPageLocators.field_password, password)
-    page.click(LoginPageLocators.button_login)
+    page.click(LoginPageLocators.login_button)
     yield driver
