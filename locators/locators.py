@@ -25,3 +25,13 @@ class ViewPageLocators():
 class CartPageLocators():
     inventory = (By.CLASS_NAME, 'inventory_item_name')
     remove_buttons = (By.CLASS_NAME, 'btn.btn_secondary.btn_small.cart_button')
+    checkout_button = (By.CLASS_NAME,'btn.btn_action.btn_medium.checkout_button')
+
+class CheckoutPageLocators():
+    first_name = (By.ID,'first-name')
+    last_name = (By.ID,'last-name')
+    postal_code = (By.ID,'postal-code')
+    continue_button = (By.ID,'continue')
+    payment_info = (By.CLASS_NAME,'summary_info_label')
+    inventory_price = (By.CLASS_NAME,'inventory_item_price')
+    item_total = (By.CLASS_NAME,'summary_subtotal_label')
