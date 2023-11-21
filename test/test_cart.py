@@ -4,7 +4,7 @@ from locators.locators import ProductsPageLocators
 from pages.produtcs_page import ProdutcsPage
 from locators.locators import CartPageLocators
 
-count_of_goods = 4
+count_of_goods = 3
 
 def add_goods_to_cart(driver):
     page = ProdutcsPage(driver)
@@ -20,6 +20,7 @@ def test_added_goods(login_to_shop):
     page.get_element(ProductsPageLocators.link_to_cart).click()
     cart_page = CartPage(driver)
     inventories = cart_page.get_all_elements(CartPageLocators.inventory)
+
     assert len(inventories) == count_of_goods
 
 def test_remove_goods_from_cart(login_to_shop):

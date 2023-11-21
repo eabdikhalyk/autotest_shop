@@ -35,3 +35,6 @@ class CheckoutPageLocators():
     payment_info = (By.CLASS_NAME,'summary_info_label')
     inventory_price = (By.CLASS_NAME,'inventory_item_price')
     item_total = (By.CLASS_NAME,'summary_subtotal_label')
+    button_finish = (By.CLASS_NAME,'btn.btn_action.btn_medium.cart_button')
+    complete_header = (By.CLASS_NAME,'complete-header')
+    error_message = (By.XPATH,'//*[@id="checkout_info_container"]/div/form/div[1]/div[4]/h3')

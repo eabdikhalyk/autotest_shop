@@ -18,7 +18,7 @@ def test_with_valid_data(chrome):
     page.enter_text(LoginPageLocators.field_user_name, user_name)
     page.enter_text(LoginPageLocators.field_password, password)
     page.click(LoginPageLocators.login_button)
-    title = page.get_title(ProductsPageLocators.title)
+    title = page.get_text_of_element(ProductsPageLocators.title)
 
     assert title == title_in_page
 
