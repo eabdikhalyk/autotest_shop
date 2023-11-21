@@ -9,8 +9,8 @@ count_of_goods = 3
 def add_goods_to_cart(driver):
     page = ProdutcsPage(driver)
     buttons = page.get_all_elements(ProductsPageLocators.add_to_cart_button)
-    for _ in range(0, 3):
-        button = random.choice(buttons)
+    for i in range(0, 3):
+        button = buttons[i]
         button.click()
     return driver
 

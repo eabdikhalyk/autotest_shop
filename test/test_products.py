@@ -34,8 +34,8 @@ def test_sorting_by_price_high_to_low(login_to_shop):
 def test_add_goods_to_cart(login_to_shop):
     page = ProdutcsPage(login_to_shop)
     buttons = page.get_all_elements(ProductsPageLocators.add_to_cart_button)
-    for _ in range(0,3):
-        button = random.choice(buttons)
+    for i in range(0,3):
+        button = buttons[i]
         button.click()
     cart_count_actual = page.get_element(ProductsPageLocators.cart_count).text
 
