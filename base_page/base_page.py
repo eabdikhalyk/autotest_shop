@@ -22,13 +22,3 @@ class BasePage():
     def get_all_elements(self, by_locator):
         elements = WebDriverWait(self.driver, 10).until(EC.visibility_of_all_elements_located(by_locator))
         return elements
-
-    def retry_get_all_elements(self, by_locator, max_retries=3):
-        retries = 0
-        while retries < max_retries:
-            try:
-                elements = WebDriverWait(self.driver, 10).until(EC.visibility_of_all_elements_located(by_locator))
-                return elements
-                break
-            except StaleElementReferenceException:
-                retries += 1
